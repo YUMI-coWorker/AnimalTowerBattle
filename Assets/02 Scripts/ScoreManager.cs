@@ -3,6 +3,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[System.Serializable]
+//public class PlayerRank
+//{
+//    public int profile;
+//    public string playerName;
+//    public int animalCount;
+//    public float score;
+
+//    public PlayerRank(int profile, string playerName, int animalCount, float score)
+//    {
+//        this.profile = profile;
+//        this.playerName = playerName;
+//        this.animalCount = animalCount;
+//        this.score = score;
+//    }
+//}
 public class ScoreManager : MonoBehaviour
 {
     public List<float> highScores = new List<float>();

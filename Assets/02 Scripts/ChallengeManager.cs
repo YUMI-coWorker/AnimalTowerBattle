@@ -66,9 +66,9 @@ public class ChallengeManager : MonoBehaviour
         {
             achieve2 = achieve;
         }
-        achievement[1].text = achieve2 + " / 10";
+        achievement[1].text = achieve2 + " / 3";
         
-        if(achieve2 >= 10)
+        if(achieve2 >= 3)   // 조건은 10인데 테스트 용으로 3으로 변경함
         {
             CompleteChallenge(1);
         }
@@ -89,10 +89,32 @@ public class ChallengeManager : MonoBehaviour
         }
     }
 
-    
-
     // 4번 챌린지
+    public void Challenge_4()
+    {
+        CompleteChallenge(3);
+        achievement[3].text = "1 / 1";
+    }
     // 5번 챌린지
+    public void Challenge_5()
+    {
+        int completeCount = 0;
+
+        for(int i = 0; i < 4; i++)
+        {
+            if (challengesCompleted[i])
+            {
+                completeCount++;
+            }
+        }
+
+        achievement[4].text = completeCount + " / 4";
+
+        if(completeCount >= 4)
+        {
+            CompleteChallenge(4);
+        }
+    }
 
 
 

@@ -157,7 +157,9 @@ public class SpawnManager : MonoBehaviour
         // 챌린지 확인
         challengeManager.Challenge_2(totalHeight);
         challengeManager.Challenge_3(animalCount-1);
+        challengeManager.Challenge_5();
 
+        // 초기화
         DestroyAllChildren(transform);  // 블록 모두 없애고
         totalHeight = 0f;   // 높이기록 초기화
         ChangeHeight(0f);   // 높이 표시 초기화
