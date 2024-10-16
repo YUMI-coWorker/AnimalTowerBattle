@@ -8,9 +8,11 @@ public class SettingPanel : MonoBehaviour
     // 프로필 이미지
     public Sprite[] profileIMG;
     public Image profile;
+    public static int profileNum = 0;   // 저장용 프로필번호
     // 프로필 닉네임
     public InputField givenName;
     public Text nickName;
+    public static string userName = "No Name";  // 저장용 이름
     // 회전 모드
     public bool is45Degree = true;      // 45도씩 회전
     public Toggle toggle45;
@@ -38,24 +40,29 @@ public class SettingPanel : MonoBehaviour
     public void ProfileBear()
     {
         profile.sprite = profileIMG[0];
+        profileNum = 0;
     }
     public void ProfileCat()
     {
         profile.sprite = profileIMG[1];
+        profileNum = 1;
     }
     public void ProfileSnake()
     {
         profile.sprite = profileIMG[2];
+        profileNum = 2;
     }
     public void ProfileShark()
     {
         profile.sprite = profileIMG[3];
+        profileNum = 3;
     }
 
     // 프로필 닉네임
     public void ApplyNickname()
     {
         nickName.text = givenName.text;
+        userName = givenName.text;
     }
     // 회전 모드
     private void RotationSetChanged(bool isOn)

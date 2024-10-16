@@ -94,7 +94,7 @@ public class Animal : MonoBehaviour
             if (transform.position.y < gameOverHeight)
             {
                 isGameOver = true;
-                scoreManager.AddScore(spawnManager.totalHeight);
+                scoreManager.AddScore(SettingPanel.profileNum,SettingPanel.userName, spawnManager.animalCount-1, spawnManager.totalHeight);
                 spawnManager.GameOver();
                 Time.timeScale = 0;
             }

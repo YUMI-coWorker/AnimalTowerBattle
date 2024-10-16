@@ -11,6 +11,7 @@ public class GameOverPanel : MonoBehaviour
     public GameObject playPanel;
     public GameObject titlePanel;
     public GameObject gameOverPanel;
+    public GameObject rankPanel;
 
     // 현재기록
     public SpawnManager spawnManager;
@@ -54,6 +55,8 @@ public class GameOverPanel : MonoBehaviour
         bestRecord.text = bestScore.ToString("F2") + "m";
         // 동물갯수 보여주기
         animalCount.text = (spawnManager.animalCount -1).ToString() + "마리";
+        // 랭크 갱신하기
+        rankPanel.GetComponent<RankPanel>().UpdateRank();
 
     }
     private void OnDisable()
