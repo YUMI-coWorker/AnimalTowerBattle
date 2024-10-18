@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] prefabs;    // 프리팹 배열
+    //public GameObject[] prefabs;    // 프리팹 배열
+    public List<GameObject> basicPrefabs = new List<GameObject>(); 
     public Vector2 spawnPosition;   // 생성 위치
     public GameObject spawnedObject;
 
@@ -69,8 +70,8 @@ public class SpawnManager : MonoBehaviour
     public void SpawnRandomPrefab()
     {
         animalCount++;
-        int randomIndex = Random.Range(0, prefabs.Length);
-        spawnedObject = Instantiate(prefabs[randomIndex], transform); // 자식 객체로 프리팹 생성
+        int randomIndex = Random.Range(0, basicPrefabs.Count);
+        spawnedObject = Instantiate(basicPrefabs[randomIndex], transform); // 자식 객체로 프리팹 생성
         spawnedObject.transform.localPosition = spawnPosition;        // 프리팹생성 위치 조정
         Rigidbody2D rb = spawnedObject.GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -78,7 +79,7 @@ public class SpawnManager : MonoBehaviour
             rb.isKinematic = true;  // 생성 시 kinematic
         }
 
-        ChangeName(prefabs[randomIndex].name);
+        ChangeName(basicPrefabs[randomIndex].name);
 
     }
     public void ChangeAnimal()

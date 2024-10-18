@@ -19,6 +19,10 @@ public class SettingPanel : MonoBehaviour
     // BGM 슬라이드
     public AudioSource BgmAudioSource;
     public Slider BgmSlider;
+    // WallPaper
+    public GameObject playPanel;
+    public Sprite[] wallpapers;
+    public ToggleGroup toggleBGI;
 
     void Start()
     {
@@ -28,6 +32,13 @@ public class SettingPanel : MonoBehaviour
         // BGM 슬라이더를 변경하면 BGM 음량조절
         BgmSlider.value = BgmAudioSource.volume;
         BgmSlider.onValueChanged.AddListener(SetVolume);
+        // 토글선택에 따라 배경화면 적용
+        ChangeBGI();    // 초기화
+        foreach(Toggle toggle in toggleBGI.GetComponentsInChildren<Toggle>())
+        {
+            toggle.onValueChanged.AddListener(delegate { ChangeBGI(); });
+            Debug.Log("BGI changed");
+        }
     }
 
 
@@ -74,5 +85,19 @@ public class SettingPanel : MonoBehaviour
     private void SetVolume(float volume)
     {
         BgmAudioSource.volume = volume;
+    }
+
+    // BGI
+    private void ChangeBGI()
+    {
+        foreach (Toggle toggle in toggleBGI.GetComponentsInChildren<Toggle>())
+        {
+            if (toggle.isOn)
+            {
+                // 낮:0  밤:1
+                int index = toggle.GetComponentInChildren<Text>().text == "낮" ? 0 : 1;
+                playPanel.GetComponent<Image>().sprite = wallpapers[index];
+            }
+        }
     }
 }

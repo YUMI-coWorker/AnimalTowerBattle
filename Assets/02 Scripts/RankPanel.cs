@@ -20,7 +20,7 @@ public class RankPanel : MonoBehaviour
 
     public void UpdateRank()
     {
-        ranks = new List<PlayerRank>(scoreManager.GetHighScores());
+        ranks = new List<PlayerRank>(scoreManager.highScores);
 
         // 순위 넣어주기
         for (int i = 0; i < ranks.Count; i++)

@@ -6411,6 +6411,40 @@ MonoBehaviour:
   currentCoins: 500
   drawPrice: 100
   drawBtn: {fileID: 905925496}
+  drawPrefabs:
+  - {fileID: 6018205814651288309, guid: 17bfd857d67b19f48b8165f58ccb2851, type: 3}
+  - {fileID: 4863850874890699525, guid: 98282fb6f73f7b4488b86f6407efde74, type: 3}
+  - {fileID: 8426997119029176217, guid: c3795bac76b77bc45b42503bd3be46a5, type: 3}
+  - {fileID: 6459682695614565039, guid: 666b30b1fbbaacd478ad8ab286259973, type: 3}
+  - {fileID: 1631936446732490840, guid: 305e782415553ea42b34b481ac4ad10d, type: 3}
+  - {fileID: 291822014982494369, guid: 1ad25154fbe433d4a85148deb5d5c06f, type: 3}
+  - {fileID: 6376076794574095515, guid: 1f7f8f929f0f47449abca153de569f3e, type: 3}
+  - {fileID: 5203341125012129726, guid: 8b7b999673396a4419cd284c73f65167, type: 3}
+  - {fileID: 2956625039653867894, guid: 02a92a579e218174484bfac30a5bdb37, type: 3}
+  - {fileID: 4287068583044978205, guid: 817609ae1035e564a92168e8af4eeef3, type: 3}
+  - {fileID: 4746544021598807979, guid: 2f46838538c813d47be32f273beff130, type: 3}
+  - {fileID: 3144870241634048700, guid: 63676a468a30f0b499f8f915004b463c, type: 3}
+  - {fileID: 8279746131366998593, guid: c60275659ec877e40a5d645061854e2c, type: 3}
+  - {fileID: 4947755012298455226, guid: fd9f1f5d776d41848b982a077e21c765, type: 3}
+  - {fileID: 5921756443449418214, guid: 715a95f908d4dea419950826ce44da23, type: 3}
+  - {fileID: 85403907580882062, guid: e141e27f3c84bd84293b9c9d2a78ff23, type: 3}
+  - {fileID: 2310834231958786591, guid: 7e6b226c27c16a74d85724754bc581e4, type: 3}
+  - {fileID: 2430726486910141785, guid: 39942ecdd16c9184aae6a0840c076bc7, type: 3}
+  - {fileID: 3632766845016400810, guid: 81e7bde369182874798a3e1781d9c533, type: 3}
+  - {fileID: 5004473975966625825, guid: 683813f5470170540bb99ada2222a5c5, type: 3}
+  - {fileID: 2502076144368244152, guid: 5908e8d30c5e78b46bb4d1afb8dbc70d, type: 3}
+  - {fileID: 5771573931855025399, guid: 8d36b74df4d2b334fbbd1995be326358, type: 3}
+  - {fileID: 7783320459265526624, guid: 6b5595fc69268d0479931a14c7bd1f68, type: 3}
+  - {fileID: 1362046531796540365, guid: 6d75d3df661294043b93332d2dde0f6b, type: 3}
+  - {fileID: 4233030232517699419, guid: b5f7d97db479f524e9a7612fe66f9193, type: 3}
+  - {fileID: 1487085246760361902, guid: f4dbcec2dc8c6d448a983d97dfb79ad8, type: 3}
+  - {fileID: 7833099266427639332, guid: dc7334b273cc6a64ca71417a7e243ac1, type: 3}
+  - {fileID: 6880994061167486903, guid: e3ae5a5e2ee1bbf4fbd820af564d8837, type: 3}
+  - {fileID: 5387114552490146570, guid: 1f47970614f1b0344893184fbbc3ddd2, type: 3}
+  - {fileID: 6100580870102023313, guid: 0341dff3c74a29f40bc6f99c937525c8, type: 3}
+  - {fileID: 7986023800624728909, guid: 2c195b30a2ddf2f4e9eabc65c55a2287, type: 3}
+  - {fileID: 3840903999969702734, guid: 514f84b63dea41f4e997a9724afca006, type: 3}
+  spawnManager: {fileID: 0}
 --- !u!1 &594956135
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,8 +8693,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -16721,17 +16755,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445449492ffacf7469ed47e3f2d98e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 3840872208411015638, guid: 9193baedf2359d640ba43f58c9320d43, type: 3}
-  - {fileID: 73462897315015013, guid: 1a9154112bd02084093a604a5ac12c8d, type: 3}
-  - {fileID: 1586125102402788964, guid: 95c05b5b13b6c1742980111c36036f90, type: 3}
+  basicPrefabs:
   - {fileID: 5139853432824034267, guid: 2e000baabad95b846b3ce78d960bdc1f, type: 3}
-  - {fileID: 5161635254571354491, guid: a72252576acef134dbc2001c00dd95a9, type: 3}
+  - {fileID: 3840872208411015638, guid: 9193baedf2359d640ba43f58c9320d43, type: 3}
+  - {fileID: 1586125102402788964, guid: 95c05b5b13b6c1742980111c36036f90, type: 3}
+  - {fileID: 5589730140313169522, guid: b6cbcec9536ad6144b60e0216a94f895, type: 3}
   - {fileID: 3961730950369708826, guid: 6634889599db46348b26210950a0f375, type: 3}
+  - {fileID: 8354835601752767608, guid: aa857b797ee403944834561aafeb0896, type: 3}
+  - {fileID: 5161635254571354491, guid: a72252576acef134dbc2001c00dd95a9, type: 3}
   - {fileID: 7672998753109214015, guid: 8e72acf4de136574b8b6fab8d6830ab8, type: 3}
   - {fileID: 5443582834268380286, guid: 6f451d6fef9b16048a6c5c7d5e5fb2cb, type: 3}
-  - {fileID: 5589730140313169522, guid: b6cbcec9536ad6144b60e0216a94f895, type: 3}
-  - {fileID: 8354835601752767608, guid: aa857b797ee403944834561aafeb0896, type: 3}
+  - {fileID: 73462897315015013, guid: 1a9154112bd02084093a604a5ac12c8d, type: 3}
   spawnPosition: {x: 0, y: 0}
   spawnedObject: {fileID: 0}
   changeCount: 0
@@ -19162,6 +19196,11 @@ MonoBehaviour:
   toggle45: {fileID: 1877855085}
   BgmAudioSource: {fileID: 1505708446}
   BgmSlider: {fileID: 1122568029}
+  playPanel: {fileID: 839558306}
+  wallpapers:
+  - {fileID: 21300000, guid: 05cca7b2f20216144892f468816d2347, type: 3}
+  - {fileID: 21300000, guid: 9deb54824e6c7d14eaaba331af89a679, type: 3}
+  toggleBGI: {fileID: 417136584}
 --- !u!1 &2118293111
 GameObject:
   m_ObjectHideFlags: 0
@@ -19559,8 +19598,8 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1043751973}
   - {fileID: 563640758}
+  - {fileID: 1505708448}
   - {fileID: 731892470}
   - {fileID: 1758101173}
-  - {fileID: 1505708448}
   - {fileID: 664535336}
   - {fileID: 455084443}

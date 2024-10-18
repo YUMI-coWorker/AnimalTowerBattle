@@ -84,9 +84,4 @@ public class ScoreManager : MonoBehaviour
             highScores.Add(new PlayerRank(profile, playerName, animalCount, score));   // 리스트에 추가
         }
     }
-
-    public List<PlayerRank> GetHighScores()
-    {
-        return highScores;
-    }
 }
