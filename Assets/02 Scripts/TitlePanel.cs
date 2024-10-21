@@ -15,6 +15,11 @@ public class TitlePanel : MonoBehaviour
     public GameObject challengePanel;
     public GameObject adPanel;
 
+    private void Awake()
+    {
+        titlePanel.SetActive(true);
+        playPanel.SetActive(false);
+    }
     public void GameStart()
     {
         gameOverPanel.SetActive(false);

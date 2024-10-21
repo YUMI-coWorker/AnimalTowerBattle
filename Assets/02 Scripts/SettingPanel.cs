@@ -21,8 +21,14 @@ public class SettingPanel : MonoBehaviour
     public Slider BgmSlider;
     // WallPaper
     public GameObject playPanel;
+    public GameObject titlePanel;
+    public GameObject shopPanel;
+    public GameObject gameOverPanel;
     public Sprite[] wallpapers;
     public ToggleGroup toggleBGI;
+    public Color day = new Color(0.1921569f, 0.8156863f, 0.9843137f);
+    public Color night = new Color(0.1137255f, 0.1647059f, 0.2470588f);
+    
 
     void Start()
     {
@@ -96,7 +102,11 @@ public class SettingPanel : MonoBehaviour
             {
                 // 낮:0  밤:1
                 int index = toggle.GetComponentInChildren<Text>().text == "낮" ? 0 : 1;
-                playPanel.GetComponent<Image>().sprite = wallpapers[index];
+                Camera.main.backgroundColor = index == 0 ? day : night;
+                playPanel.GetComponent<Image>().sprite = wallpapers[index+2];     // 게임 배경
+                titlePanel.GetComponent<Image>().sprite = wallpapers[index];    // 타이틀 배경
+                shopPanel.GetComponent<Image>().sprite = wallpapers[index];     // 뽑기 배경
+                gameOverPanel.GetComponent<Image>().sprite = wallpapers[index]; // 게임오버 배경
             }
         }
     }

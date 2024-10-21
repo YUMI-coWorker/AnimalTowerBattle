@@ -14,6 +14,8 @@ public class SpawnManager : MonoBehaviour
 
     public int changeCount = 0;    // 교체횟수
     private int maxChangeCount = 2; // 최대교체횟수
+    private int remainCount = 2;    // 남은 횟수
+    public Text remainCnt;
     public Button button;
 
     public float rotationSpeed = 100f;  // 회전속도
@@ -43,7 +45,6 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         SpawnRandomPrefab();
-        button = GameObject.Find("ChangeBtn").GetComponent<Button>();
         challengeManager = GameObject.Find("ChallengeManager").GetComponent<ChallengeManager>();
         gameOverPanel.SetActive(false);
     }
@@ -97,6 +98,8 @@ public class SpawnManager : MonoBehaviour
         SpawnRandomPrefab();
         changeCount++;
         animalCount--;
+        remainCount--;
+        remainCnt.text = remainCount.ToString();
         ButtonControl();
     }
 

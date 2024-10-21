@@ -49,12 +49,12 @@ public class GameOverPanel : MonoBehaviour
     private void OnEnable()
     {
         // 현재기록 보여주기
-        latestRecord.text = spawnManager.totalHeight.ToString("F2") + "m";
+        latestRecord.text = "이번기록 : " + spawnManager.totalHeight.ToString("F2") + "m";
         // 최고기록 보여주기
         float bestScore = scoreManager.GetBestScore();
-        bestRecord.text = bestScore.ToString("F2") + "m";
+        bestRecord.text = "최고기록 : " + bestScore.ToString("F2") + "m";
         // 동물갯수 보여주기
-        animalCount.text = (spawnManager.animalCount -1).ToString() + "마리";
+        animalCount.text = "모두 " + (spawnManager.animalCount -1).ToString() + "마리";
         // 랭크 갱신하기
         rankPanel.GetComponent<RankPanel>().UpdateRank();
 
