@@ -35,6 +35,7 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject playPanel;
+    
 
     public ChallengeManager challengeManager;
 

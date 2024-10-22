@@ -8,8 +8,8 @@ public class RankPanel : MonoBehaviour
 {
     public GameObject rankPrefab;   // 랭크를 표시할 프리팹
     public Transform content;       // 스크롤뷰의 content
-    public List<PlayerRank> ranks;  // 표시할 리스트
     public Sprite[] profileIMG;
+
     public ScoreManager scoreManager;
 
     private void Start()
@@ -17,15 +17,12 @@ public class RankPanel : MonoBehaviour
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
-
     public void UpdateRank()
     {
-        ranks = new List<PlayerRank>(scoreManager.highScores);
-
         // 순위 넣어주기
-        for (int i = 0; i < ranks.Count; i++)
+        for (int i = 0; i < scoreManager.highScores.Count; i++)
         {
-            ranks[i].rank = i + 1;
+            scoreManager.highScores[i].rank = i + 1;
         }
 
         // 기존 아이템 제거
@@ -35,7 +32,7 @@ public class RankPanel : MonoBehaviour
         }
 
         // 새로운 오브젝트 생성
-        foreach(PlayerRank data in ranks)
+        foreach(PlayerRank data in scoreManager.highScores)
         {
             GameObject contents = Instantiate(rankPrefab, content);
             Text[] textComponents = contents.GetComponentsInChildren<Text>();
