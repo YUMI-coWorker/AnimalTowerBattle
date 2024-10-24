@@ -55,13 +55,11 @@ public class GameOverPanel : MonoBehaviour
         bestRecord.text = "최고기록 : " + bestScore.ToString("F2") + "m";
         // 동물갯수 보여주기
         animalCount.text = "모두 " + (spawnManager.animalCount -1).ToString() + "마리";
-        // 랭크 갱신하기
-        rankPanel.GetComponent<RankPanel>().UpdateRank();
-
     }
     private void OnDisable()
     {   
         spawnManager.Initialize();  // 초기화
+        Time.timeScale = 1;
     }
 
 }

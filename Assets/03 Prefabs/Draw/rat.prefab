@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6836733246236864530}
   m_Layer: 0
   m_Name: rat
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   isDragging: 0
   offset: {x: 0, y: 0}
+  isGameOver: 0
   spawnManager: {fileID: 0}
   scoreManager: {fileID: 0}
   gameOverHeight: -4

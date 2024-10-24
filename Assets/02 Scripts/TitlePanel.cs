@@ -15,11 +15,6 @@ public class TitlePanel : MonoBehaviour
     public GameObject challengePanel;
     public GameObject adPanel;
 
-    private void Awake()
-    {
-        titlePanel.SetActive(true);
-        playPanel.SetActive(false);
-    }
     public void GameStart()
     {
         gameOverPanel.SetActive(false);
@@ -68,14 +63,14 @@ public class TitlePanel : MonoBehaviour
         challengePanel.SetActive(false);
     }
 
-    public void OpenAdPanel()
-    {
-        adPanel.SetActive(true);
-    }
+    //public void OpenAdPanel()
+    //{
+    //    adPanel.SetActive(true);
+    //}
 
-    public void CloseAdPanel()
-    {
-        adPanel.SetActive(false);
-    }
+    //public void CloseAdPanel()
+    //{
+    //    adPanel.SetActive(false);
+    //}
 
 }

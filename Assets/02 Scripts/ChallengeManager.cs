@@ -15,6 +15,8 @@ public class ChallengeManager : MonoBehaviour
     // 챌린지 변수
     private int achieve2 = 0;   // 총높이 저장
     private int achieve3 = 0;   // 동물갯수 저장
+    // 효과음
+    public SoundManager soundManager;
 
     void Start()
     {
@@ -50,6 +52,7 @@ public class ChallengeManager : MonoBehaviour
         {
             shopPanel.currentCoins += 20;
             shopPanel.CoinChange(shopPanel.currentCoins);   // 코인텍스트 업데이트
+            soundManager.PlaySound(0);  // 효과음 재생
             buttons[index].interactable = false;
             Debug.Log("코인이 지급되었습니다.");
 

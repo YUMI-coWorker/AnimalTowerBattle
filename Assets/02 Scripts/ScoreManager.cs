@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class PlayerRank
@@ -41,13 +42,23 @@ public class ScoreManager : MonoBehaviour
             highScores.RemoveAt(highScores.Count - 1);
         }
 
-        SaveScores();
+        PutIn5thIndex();    // 순위넣고
+        SaveScores();       // 저장하기
 
         // 확인용
-        Debug.Log("Current High Scores:");
-        foreach (var rank in highScores)
+        //Debug.Log("Current High Scores:");
+        //foreach (var rank in highScores)
+        //{
+        //    Debug.Log($"Profile: {rank.profile}, Name: {rank.playerName}, Animal Count: {rank.animalCount}, Score: {rank.score}, Rank: {rank.rank}");
+        //}
+    }
+
+    public void PutIn5thIndex()
+    {
+        // 순위 넣어주기
+        for (int i = 0; i < highScores.Count; i++)
         {
-            Debug.Log($"Profile: {rank.profile}, Name: {rank.playerName}, Animal Count: {rank.animalCount}, Score: {rank.score}");
+            highScores[i].rank = i + 1;
         }
     }
 

@@ -12,52 +12,46 @@ public class AdPanel : MonoBehaviour
     public ChallengeManager challengeManager;
 
     public VideoPlayer videoPlayer;
-    public float adDuration = 5.0f;
+    public int adDuration = 5;
 
     private void Start()
     {
         challengeManager = GameObject.Find("ChallengeManager").GetComponent<ChallengeManager>();
     }
 
-    private void OnEnable()
-    {
-        closeBtn.gameObject.SetActive(false);
-        //StartCoroutine(StartCountdown(5));
-        //Time.timeScale = 1;
-        ShowAd();
-    }
-    private void OnDisable()
-    {
-        challengeManager.Challenge_4();
-    }
-
     public void ShowAd()
     {
+        gameObject.SetActive(true);
+        closeBtn.gameObject.SetActive(false);
         videoPlayer.Play();
-        StartCoroutine(WaitForAd());
+        StartCoroutine(Countdown(adDuration));
     }
 
-    private IEnumerator WaitForAd()
+
+
+    public void CloseAd()
     {
-        yield return new WaitForSeconds(adDuration);
-        closeBtn.gameObject.SetActive(true);
+        challengeManager.Challenge_4();
+        videoPlayer.Stop();
+        gameObject.SetActive(false);
     }
 
-    //private IEnumerator StartCountdown(int startTime)
-    //{
-    //    Debug.Log("Countdown Start");
-    //    int timeLeft = startTime;
+    private IEnumerator Countdown(int time)
+    {
+        Debug.Log("Countdown Start");
 
-    //    while (timeLeft >= 0)
-    //    {
-    //        countdownText.text = timeLeft.ToString();
-    //        yield return new WaitForSeconds(1);
-    //        timeLeft = timeLeft - 1;
-    //    }
-
-    //    closeBtn.gameObject.SetActive(true);
-    //    Time.timeScale = 0;
-    //}
+        while(time > 0)
+        {
+            countdownText.text = time.ToString();  // 남은 시간 표시
+            yield return new WaitForSecondsRealtime(1); // 1초 대기
+            time--;
+        }
+        countdownText.text = "0";
+        countdownText.gameObject.SetActive(false);
+        closeBtn.gameObject.SetActive(true);
+        
+        
+    }
 
     
 }

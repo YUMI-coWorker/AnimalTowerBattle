@@ -22,6 +22,9 @@ public class ShopPanel : MonoBehaviour
     public Text displayName;
     public float appearDuration = 1.0f;
 
+    // 효과음
+    public SoundManager soundManager;
+
 
     void Start()
     {
@@ -60,6 +63,9 @@ public class ShopPanel : MonoBehaviour
             // 이전 뽑기 내용 초기화
             if (displayName.text != null) displayName.text = "";
             displayImage.color = new Color32(255, 255, 255, 255);
+
+            // 효과음 재생
+            soundManager.PlaySound(4);
 
             // 랜덤 동물 선택
             int rnd = Random.Range(0, drawPrefabs.Count);

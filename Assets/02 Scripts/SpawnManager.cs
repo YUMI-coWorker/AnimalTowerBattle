@@ -33,11 +33,9 @@ public class SpawnManager : MonoBehaviour
     public float cameraOffset = 1.8f;
     public float cameraSpeed = 0.05f;
 
-    public GameObject gameOverPanel;
-    public GameObject playPanel;
-    
-
     public ChallengeManager challengeManager;
+    public SoundManager soundManager;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -47,7 +45,6 @@ public class SpawnManager : MonoBehaviour
     {
         SpawnRandomPrefab();
         challengeManager = GameObject.Find("ChallengeManager").GetComponent<ChallengeManager>();
-        gameOverPanel.SetActive(false);
     }
 
     private IEnumerator SmoothCameraMove(Vector3 targetPosition)
@@ -66,7 +63,14 @@ public class SpawnManager : MonoBehaviour
         if (isRotating)
         {
             spawnedObject.transform.Rotate(Vector3.forward, -rotationSpeed * Time.deltaTime);
+
+            if(!audioSource.isPlaying)
+            {
+                soundManager.PlaySound(1); // 효과음재생
+            }
+            
         }
+        
     }
 
     public void SpawnRandomPrefab()
@@ -97,6 +101,7 @@ public class SpawnManager : MonoBehaviour
             Destroy(spawnedObject);
         }
         SpawnRandomPrefab();
+        soundManager.PlaySound(2);
         changeCount++;
         animalCount--;
         remainCount--;
@@ -127,6 +132,7 @@ public class SpawnManager : MonoBehaviour
         if (rotationSet.is45Degree)
         {
             spawnedObject.transform.Rotate(Vector3.forward, -45);
+            soundManager.PlaySound(1);
         }
         else
         {
@@ -149,12 +155,6 @@ public class SpawnManager : MonoBehaviour
     {
         Vector3 newCameraPosition = new Vector3(0, totalHeight + cameraOffset, -10);
         StartCoroutine(SmoothCameraMove(newCameraPosition));
-    }
-
-    public void GameOver()
-    {
-        playPanel.SetActive(false);
-        gameOverPanel.SetActive(true);
     }
 
     public void Initialize()
