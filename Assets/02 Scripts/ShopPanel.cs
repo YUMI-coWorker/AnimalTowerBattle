@@ -24,6 +24,9 @@ public class ShopPanel : MonoBehaviour
 
     // 효과음
     public SoundManager soundManager;
+    // 이펙트
+    public GameObject confetti;
+    public GameObject confetti2;
 
 
     void Start()
@@ -66,6 +69,10 @@ public class ShopPanel : MonoBehaviour
 
             // 효과음 재생
             soundManager.PlaySound(4);
+            
+            //  이펙트 재생
+            confetti.GetComponent<ParticleSystem>().Play();
+            confetti2.GetComponent<ParticleSystem>().Play();
 
             // 랜덤 동물 선택
             int rnd = Random.Range(0, drawPrefabs.Count);

@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     private int maxChangeCount = 2; // 최대교체횟수
     private int remainCount = 2;    // 남은 횟수
     public Text remainCnt;
-    public Button button;
+    public UnityEngine.UI.Button button;
 
     public float rotationSpeed = 100f;  // 회전속도
     public bool isRotating = false;     // 회전상태
@@ -36,6 +37,8 @@ public class SpawnManager : MonoBehaviour
     public ChallengeManager challengeManager;
     public SoundManager soundManager;
     public AudioSource audioSource;
+
+    public GameObject changeEffect; // 교체 이펙트
 
     private void Awake()
     {
@@ -101,7 +104,9 @@ public class SpawnManager : MonoBehaviour
             Destroy(spawnedObject);
         }
         SpawnRandomPrefab();
-        soundManager.PlaySound(2);
+        soundManager.PlaySound(2);      // 효과음
+        changeEffect.transform.position = spawnedObject.transform.localPosition + new Vector3(0,3,0);        // 이펙트 위치
+        changeEffect.GetComponent<ParticleSystem>().Play();     // 이펙트 재생
         changeCount++;
         animalCount--;
         remainCount--;
@@ -169,6 +174,9 @@ public class SpawnManager : MonoBehaviour
         totalHeight = 0f;   // 높이기록 초기화
         ChangeHeight(0f);   // 높이 표시 초기화
         changeCount = 0;    // 교체횟수 초기화
+        remainCount = 2;    // 남은교체횟수 초기화
+        remainCnt.text = remainCount.ToString();    // 남은 교체횟수 표시
+        button.interactable = true;     // 버튼 활성화
         animalCount = 0;    // 동물 갯수 초기화
         CameraMove();       // 카메라 위치 초기화
         SpawnPointMove();   // 스폰위치 초기화

@@ -38,6 +38,7 @@ public class GameOverPanel : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         titlePanel.SetActive(true);
+        playPanel.SetActive(false);
     }
     public void Restart()   // ¿ÁΩ√¿€
     {
