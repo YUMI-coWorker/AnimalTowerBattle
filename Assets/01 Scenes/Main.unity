@@ -50653,7 +50653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleCoin: {fileID: 1225006756}
   shopCoin: {fileID: 1573213955}
-  currentCoins: 3200
+  currentCoins: 600
   drawPrice: 100
   drawBtn: {fileID: 905925496}
   drawPrefabs:
@@ -56743,11 +56743,12 @@ MonoBehaviour:
   audioSource: {fileID: 696223266}
   soundClips:
   - {fileID: 8300000, guid: e028240e25e2abb43a2acb9599db4009, type: 3}
-  - {fileID: 8300000, guid: 951dbe337eea77440b6b43e1cc551c41, type: 3}
+  - {fileID: 8300000, guid: ff715f543ed8a274eb9c54cdb47cc881, type: 3}
   - {fileID: 8300000, guid: e0413418526cdb542bd4a68c4d8ea4fe, type: 3}
   - {fileID: 8300000, guid: 86ddccb50a2a50249833293beec52cbc, type: 3}
   - {fileID: 8300000, guid: 0ecd1c8f3b60972448acf232efc077b9, type: 3}
-  - {fileID: 8300000, guid: ff715f543ed8a274eb9c54cdb47cc881, type: 3}
+  - {fileID: 8300000, guid: 951dbe337eea77440b6b43e1cc551c41, type: 3}
+  - {fileID: 8300000, guid: fff5fe1a6b744a04a8a5f23d27f46bca, type: 3}
 --- !u!4 &696223268
 Transform:
   m_ObjectHideFlags: 0
@@ -85870,7 +85871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3200
+  m_Text: 600
 --- !u!222 &1225006757
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -117966,7 +117967,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a6327ca9e571aa04395538fba54e8136, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.132
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -118822,7 +118823,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 600
 --- !u!222 &1573213956
 CanvasRenderer:
   m_ObjectHideFlags: 0

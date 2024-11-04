@@ -9,7 +9,7 @@ public class ShopPanel : MonoBehaviour
     // 뽑기
     public Text titleCoin;
     public Text shopCoin;
-    public int currentCoins = 500;  // 현재 갖고 있는 코인갯수
+    public int currentCoins = 600;  // 현재 갖고 있는 코인갯수
     public int drawPrice = 100;     // 1회 뽑기 비용
     public Button drawBtn;
 
